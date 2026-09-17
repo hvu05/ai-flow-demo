@@ -1,0 +1,26 @@
+name: ai-flow
+services:
+  app:
+    build: .
+    init: false
+    ports:
+      - "127.0.0.1:${AI_FLOW_PORT:-8090}:4100"
+    environment:
+      WEB_ORIGIN: http://localhost:${AI_FLOW_PORT:-8090}
+      CODEX_MODEL: ${CODEX_MODEL:-}
+      AGENT_TIMEOUT_MS: ${AGENT_TIMEOUT_MS:-600000}
+    volumes:
+      - ai-flow-data:/app/data
+      - ai-flow-workspaces:/app/workspaces
+      - ai-flow-auth:/home/node/.codex
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:4100/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    stop_grace_period: 15s
+volumes:
+  ai-flow-data:
+  ai-flow-workspaces:
+  ai-flow-auth:

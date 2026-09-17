@@ -1,0 +1,35 @@
+{
+  "name": "ai-flow",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=24.15.0 <25",
+    "npm": ">=11"
+  },
+  "scripts": {
+    "dev": "npm run build -w @ai-flow/contracts && concurrently -k -n contracts,api,web \"npm run dev -w @ai-flow/contracts\" \"npm run dev -w @ai-flow/api\" \"npm run dev -w @ai-flow/web\"",
+    "build": "npm run build -w @ai-flow/contracts && npm run build -w @ai-flow/api && npm run build -w @ai-flow/web",
+    "typecheck": "npm run build -w @ai-flow/contracts && npm run typecheck --workspaces",
+    "lint": "eslint . --max-warnings=0",
+    "test": "npm run build -w @ai-flow/contracts && vitest run",
+    "test:browser": "playwright test",
+    "check": "npm run typecheck && npm run lint && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.58.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.0.0",
+    "concurrently": "^9.0.0",
+    "eslint": "^10.10.0",
+    "globals": "^16.0.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^5.0.1"
+  }
+}

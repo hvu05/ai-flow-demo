@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "projectId": "project_demo",
+  "taskId": "task_test",
+  "runId": "run_test",
+  "outcome": "completed",
+  "summary": "Bàn giao đã kiểm tra",
+  "artifactRefs": [
+    {
+      "id": "artifact_prd",
+      "version": 1,
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "findingIds": [],
+  "questions": [],
+  "metadata": {
+    "generatedAt": "2026-09-16T00:00:00.000Z",
+    "checks": []
+  },
+  "role": "tester",
+  "result": {
+    "testedCommit": "cccccccccccccccccccccccccccccccccccccccc",
+    "verdict": "PASS",
+    "criteria": [
+      {
+        "acceptanceId": "AC01",
+        "status": "PASS",
+        "expected": "Trang tải dữ liệu",
+        "actual": "Dữ liệu được hiển thị",
+        "evidenceRefs": [
+          {
+            "id": "artifact_prd",
+            "version": 1,
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ]
+      }
+    ]
+  }
+}

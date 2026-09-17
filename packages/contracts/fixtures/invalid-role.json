@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "projectId": "project_demo",
+  "taskId": "task_docs",
+  "runId": "run_docs",
+  "outcome": "completed",
+  "summary": "Bàn giao đã kiểm tra",
+  "artifactRefs": [
+    {
+      "id": "artifact_prd",
+      "version": 1,
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "findingIds": [],
+  "questions": [],
+  "metadata": {
+    "generatedAt": "2026-09-16T00:00:00.000Z",
+    "checks": []
+  },
+  "role": "backend",
+  "result": {
+    "documentRefs": [
+      {
+        "id": "artifact_prd",
+        "version": 1,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    ]
+  }
+}
